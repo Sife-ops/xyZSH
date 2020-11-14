@@ -5,10 +5,7 @@ function preexec() {
 
 # Automatically ls after cd
 function chpwd() {
-    # emulate -L zsh
-
-    # ls -ahN --color=auto --group-directories-first
-
-    lsd -a
+    emulate -L zsh
+    which lsd && lsd -a || ls -ahN --color=auto --group-directories-first
 }
 
