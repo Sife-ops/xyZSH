@@ -1,7 +1,7 @@
 #!/bin/sh
 
 modsdir=$(pwd)/modules
-initdir=$(pwd)/fdsa
+initdir=$(pwd)/init.d
 
 [ -d $modsdir ] && [ -d $initdir ] || exit 1
 
