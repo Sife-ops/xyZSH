@@ -14,6 +14,5 @@ function copyfile {
 function copybuffer () {
     printf "%s" "$BUFFER" | xclip -selection clipboard
 }
-zle -N copybuffer
+# zle -N copybuffer
 # bindkey "^O" copybuffer
-
