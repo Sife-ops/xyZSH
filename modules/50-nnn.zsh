@@ -1,6 +1,5 @@
-# Configure NNN to cd on quit
-nnncd ()
-{
+nnncd () {
+    # Configure NNN to cd on quit
     # Block nesting of nnn in subshells
     if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
         echo "nnn is already running"

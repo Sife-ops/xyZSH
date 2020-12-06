@@ -1,5 +1,5 @@
-# Configure lf to cd on quit
 lfcd () {
+    # Configure lf to cd on quit
     tmp="$(mktemp)"
     lf -last-dir-path="$tmp" "$@"
     if [ -f "$tmp" ]; then
