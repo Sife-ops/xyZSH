@@ -1,10 +1,14 @@
-# history substring search
-if [ -e "${ZDOTDIR}/init.d/71-history-substring-search.zsh" ]; then
-    bindkey '^P' history-substring-search-up
-    bindkey '^N' history-substring-search-down
-    bindkey -M vicmd '^P' history-substring-search-up
-    bindkey -M vicmd '^N' history-substring-search-down
-fi
+function isfunction {
+    # test whether function is defined
+    if type $1 | grep -q 'is a shell function' 2>/dev/null; then
+        true
+    else
+        false
+    fi
+}
+
+# fix backspace key
+bindkey -v '^?' backward-delete-char
 
 # navigate completion menu with vim keys
 bindkey -M menuselect 'h' vi-backward-char
