@@ -1,4 +1,4 @@
-function zle-keymap-select {
+function zle-keymap-select() {
     # Change cursor shape for different vi modes.
     if [[ ${KEYMAP} == vicmd ]] ||
         [[ $1 = 'block' ]]; then

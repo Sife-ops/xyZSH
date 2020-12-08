@@ -1,4 +1,4 @@
-rangercd () {
+rangercd() {
     # Configure ranger to cd on quit.
     temp_file="$(mktemp -t "ranger_cd.XXXXXXXXXX")"
     ranger --choosedir="$temp_file" -- "${@:-$PWD}"

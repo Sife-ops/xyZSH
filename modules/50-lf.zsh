@@ -1,4 +1,4 @@
-lfcd () {
+lfcd() {
     # Configure lf to cd on quit
     tmp="$(mktemp)"
     lf -last-dir-path="$tmp" "$@"
