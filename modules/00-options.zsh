@@ -1,6 +1,5 @@
 setopt vi                       # vi mode
 setopt autocd                   # cd with only path
-# setopt correct_all              # try to correct wrong commands
 setopt auto_list                # list choices on ambiguous completion
 setopt auto_menu                # automatically use menu completion
 setopt always_to_end            # go to end if only one match
