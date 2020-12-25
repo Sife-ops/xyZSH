@@ -1,11 +1,11 @@
-#                _________  _   _ 
+#                _________  _   _
 #    __  ___   _|__  / ___|| | | |
 #    \ \/ / | | | / /\___ \| |_| |
 #     >  <| |_| |/ /_ ___) |  _  |
 #    /_/\_\\__, /____|____/|_| |_|
-#          |___/                  
+#          |___/
 
-###---- INSTRUCTIONS -----------------------------------------------------------
+#^----- INSTRUCTIONS -----------------------------------------------------------
 
 # To enable modules, create links from modules/ to init.d/ like this:
 #
@@ -23,13 +23,13 @@
 # 71-history-substring-search.zsh
 # 90-keymap.zsh
 
-##
+#$
 
-###
+#^
 for file in $(find ${ZDOTDIR}/init.d/*)
 do
     source $file
 done
-##
+#$
 
-# vim: fdm=marker fmr=###,##
+# vim: fdm=marker fmr=#^,#$
