@@ -1,22 +1,32 @@
+function cheat () {
+    # Wrapper for cht.sh.
+    emulate -L zsh
+    curl cht.sh/$1
+}
+
 function copybuffer() {
-    # copy the active line from the command line buffer onto the system clipboard
+    # Copy the active line from the command line buffer onto the system
+    # clipboard.
+    emulate -L zsh
     printf "%s" "$BUFFER" | xclip -selection clipboard
 }
 zle -N copybuffer
 
 function copydir() {
-    # Copies the pathname of the current directory to the system or X Windows clipboard
+    # Copies the pathname of the current directory to the system or X Windows
+    # clipboard.
     emulate -L zsh
     print -n $PWD | xclip -selection clipboard
 }
 
 function copyfile() {
-    # Copies the contents of a given file to the system or X Windows clipboard
+    # Copies the contents of a given file to the system or X Windows clipboard.
     emulate -L zsh
     cat $1 | xclip -selection clipboard
 }
 
 function ex() {
+    # Extracts archives.
     if [ -f "$1" ] ; then
         case "$1" in
             *.tar.bz2|*.tbz2) tar xvjf "$1" ;;
