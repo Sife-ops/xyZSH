@@ -100,11 +100,13 @@ command -v neomutt >/dev/null \
 
 alias \
 	t="tmux -f ${XDG_CONFIG_HOME:-$HOME/.config}/tmux/tmux.conf" \
+	tmux="tmux -f ${XDG_CONFIG_HOME:-$HOME/.config}/tmux/tmux.conf" \
     ta='tmux attach-session -t' \
+    td='tmux attach-session -t default' \
     tg='tmux new-session -t' \
     tk='tmux kill-session -t' \
     tl='tmux list-sessions' \
-	tmux="tmux -f ${XDG_CONFIG_HOME:-$HOME/.config}/tmux/tmux.conf"
+    tn='tmux new-session -d -s'
 
 #$
 
