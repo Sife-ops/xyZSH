@@ -2,7 +2,6 @@
 !00-options.zsh
 !10-autoload.zsh
 !20-zmodload.zsh
-!30-prompt-simple.zsh
 !30-zstyle.zsh
 !40-functions.zsh
 !40-special.zsh
@@ -14,5 +13,4 @@
 !60-aliasrc.zsh
 !60-shortcuts.zsh
 !70-autosuggestions.zsh
-!70-syntax-highlighting.zsh
 !90-keymap.zsh
