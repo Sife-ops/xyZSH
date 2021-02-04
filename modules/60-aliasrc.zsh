@@ -106,7 +106,9 @@ alias \
     tg='tmux new-session -t' \
     tk='tmux kill-session -t' \
     tl='tmux list-sessions' \
-    tn='tmux new-session -d -s'
+    tn='tmux new-session -d -s' \
+	tt="${XDG_CONFIG_HOME:-$HOME/.config}/tmux/default.sh && \\
+        tmux attach-session -t default"
 
 #$
 
