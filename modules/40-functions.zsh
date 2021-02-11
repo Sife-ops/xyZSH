@@ -1,3 +1,12 @@
+function rsupdate () {
+    # Wrapper for rsync.
+    emulate -L zsh
+    rsync -av --update \
+        ${3:+--delete} \
+        $(id -un)@$2:"$(readlink -f "$1")" \
+        "$(dirname "$(readlink "$1")")/"
+}
+
 function cheat () {
     # Wrapper for cht.sh.
     emulate -L zsh
