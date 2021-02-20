@@ -1,3 +1,13 @@
+function emacs () {
+    # Emacs shortcut.
+    emulate -L zsh
+    if pgrep -x emacs ; then
+        emacsclient -nw
+    else
+        command emacs --daemon && emacsclient -nw
+    fi
+}
+
 function rsupdate () {
     # Wrapper for rsync.
     emulate -L zsh

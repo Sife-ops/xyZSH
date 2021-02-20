@@ -59,14 +59,6 @@ alias \
 
 #$
 
-#^ Emacs
-
-systemctl --quiet --user is-active emacs.service >/dev/null \
-    && alias e='emacsclient' \
-    || alias e='emacs'
-
-#$
-
 #^ Git
 
 alias \
