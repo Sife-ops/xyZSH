@@ -52,6 +52,7 @@ alias \
     so="source {${XDG_CONFIG_HOME:-${HOME}/.config}/aliasrc,${ZDOTDIR}/.zshrc}" \
     so="source ~/.zprofile; source ${ZDOTDIR}/.zshrc" \
     tp='trash-put' \
+    upgrade='yay -Syu && pacnotifyupdate.sh' \
     xo='xdg-open' \
     xr='xrdb ~/.Xresources' \
     z="zathura"
