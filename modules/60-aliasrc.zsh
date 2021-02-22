@@ -6,17 +6,19 @@
 
 #^----- COMMAND OPTIONS --------------------------------------------------------
 
-alias \
-    cp="cp -iv" \
-    diff="diff --color=auto" \
-    ffmpeg="ffmpeg -hide_banner" \
-    grep="grep --color=auto" \
-    hl="highlight --out-format=ansi" \
-    less='less -i' \
-    ls="ls -ahN --color=auto --group-directories-first" \
-    mv="mv -iv" \
-    mkdir="mkdir -pv" \
-    rm="rm -vI"
+case "$(uname)" in
+    Linux) alias \
+        cp="cp -iv" \
+        diff="diff --color=auto" \
+        ffmpeg="ffmpeg -hide_banner" \
+        grep="grep --color=auto" \
+        hl="highlight --out-format=ansi" \
+        less='less -i' \
+        ls="ls -ahN --color=auto --group-directories-first" \
+        mv="mv -iv" \
+        mkdir="mkdir -pv" \
+        rm="rm -vI" ;;
+esac
 
 #$
 

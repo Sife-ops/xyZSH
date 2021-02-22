@@ -6,8 +6,14 @@ function preexec() {
 function chpwd() {
     # Automatically ls after cd
     emulate -L zsh
-    which lsd 1>/dev/null 2>&1 \
-        && lsd -a \
-        || ls -ahN --color=auto --group-directories-first
+
+    if which lsd 1>/dev/null 2>&1; then
+        lsd -a
+    else
+        case "$(uname)" in
+            Linux) ls -ahN --color=auto --group-directories-first ;;
+            *) ls ;;
+        esac
+    fi
 }
 
