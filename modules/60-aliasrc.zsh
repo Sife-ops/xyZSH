@@ -4,61 +4,20 @@
 #     | (_| | | | (_| \__ \ | | (__
 #    (_)__,_|_|_|\__,_|___/_|  \___|
 
-#^----- COMMAND OPTIONS --------------------------------------------------------
+#^ Coreutils
 
 case "$(uname)" in
     Linux) alias \
         cp="cp -iv" \
         diff="diff --color=auto" \
-        ffmpeg="ffmpeg -hide_banner" \
         grep="grep --color=auto" \
-        hl="highlight --out-format=ansi" \
         less='less -i' \
+        ll='ls -la --color=auto' \
         ls="ls -ahN --color=auto --group-directories-first" \
-        mv="mv -iv" \
         mkdir="mkdir -pv" \
+        mv="mv -iv" \
         rm="rm -vI" ;;
 esac
-
-#$
-
-#^----- ABBREVIATIONS ----------------------------------------------------------
-
-#^ General
-
-alias \
-    abook="abook -C ${XDG_CONFIG_HOME:-${HOME}/.config}/abook/abookrc \\
-        --datafile ${XDG_DATA_HOME:-${HOME}/.local/share}/addressbook" \
-    cal='calcurse' \
-    chx='chmod +x' \
-    d='dragon-drag-and-drop' \
-    f='lfcd' \
-    fcl='fc-list : family style | less' \
-    fvm='sudo fuser -vm' \
-    irssi="irssi --config=${XDG_CONFIG_HOME:-${HOME}/.config}/irssi/config \\
-        --home=${XDG_CONFIG_HOME:-${HOME}/.config}/irssi" \
-    k='kill' \
-    ka="killall" \
-    ll='ls -la --color=auto' \
-    myip='dig +short myip.opendns.com @resolver1.opendns.com' \
-    n='nnncd' \
-    nb='newsboat' \
-    offlineimap="offlineimap -c \\
-        ${XDG_CONFIG_HOME:-$HOME/.config}/offlineimap/offlineimaprc" \
-    p="sudo pacman" \
-    pg='pgrep' \
-    pk='pkill' \
-    r='rangercd' \
-    rtorrent='rtorrent -n -o import=~/.config/rtorrent/rtorrent.rc' \
-	sdn="sudo shutdown -h now" \
-    so="source {${XDG_CONFIG_HOME:-${HOME}/.config}/aliasrc,${ZDOTDIR}/.zshrc}" \
-    so="source ~/.zprofile; source ${ZDOTDIR}/.zshrc" \
-    tp='trash-put' \
-    update='yay -Syu && pacnotifyupdate.sh' \
-    upgrade='yay -Syu && pacnotifyupdate.sh' \
-    xo='xdg-open' \
-    xr='xrdb ~/.Xresources' \
-    z="zathura"
 
 #$
 
@@ -115,6 +74,33 @@ command -v nvim >/dev/null \
     || alias v="vim" vimdiff="vim -d" vd="vim -d"
 
 #$
+
+#^ Miscellaneous
+
+alias \
+    abook="abook -C ${XDG_CONFIG_HOME:-${HOME}/.config}/abook/abookrc \\
+        --datafile ${XDG_DATA_HOME:-${HOME}/.local/share}/addressbook" \
+    chx='chmod +x' \
+    d='dragon-drag-and-drop' \
+    f='lfcd' \
+    fcl='fc-list : family style | less' \
+    fvm='sudo fuser -vm' \
+    irssi="irssi --config=${XDG_CONFIG_HOME:-${HOME}/.config}/irssi/config \\
+        --home=${XDG_CONFIG_HOME:-${HOME}/.config}/irssi" \
+    k='kill' \
+    ka="killall" \
+    myip='dig +short myip.opendns.com @resolver1.opendns.com' \
+    n='nnncd' \
+    offlineimap="offlineimap -c \\
+        ${XDG_CONFIG_HOME:-$HOME/.config}/offlineimap/offlineimaprc" \
+    p="sudo pacman" \
+    pg='pgrep' \
+    pk='pkill' \
+    r='rangercd' \
+    tp='trash-put' \
+    update='yay -Syu && pacnotifyupdate.sh' \
+    upgrade='yay -Syu && pacnotifyupdate.sh' \
+    z="zathura"
 
 #$
 
