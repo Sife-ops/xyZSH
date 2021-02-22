@@ -2,9 +2,11 @@ function emacs () {
     # Emacs shortcut.
     emulate -L zsh
     if pgrep -x emacs ; then
-        emacsclient -nw "$1"
+        [ -n "$1" ] && emacsclient -nw "$1" \
+                    || emacsclient -nw
     else
-        command emacs --daemon && emacsclient -nw "$1"
+        [ -n "$1" ] && command emacs --daemon && emacsclient -nw "$1" \
+                    || command emacs --daemon && emacsclient -nw
     fi
 }
 
