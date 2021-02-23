@@ -1,3 +1,10 @@
+function pdf () {
+    # pdftotext shortcut
+    text="$(mktemp /tmp/pdftotext.XXX)"
+    pdftotext "$1" "$text"
+    less "$text"
+}
+
 function emacs () {
     # Emacs shortcut.
     emulate -L zsh
