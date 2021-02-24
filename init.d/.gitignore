@@ -6,11 +6,15 @@
 !40-functions.zsh
 !40-special.zsh
 !40-widgets.zsh
-!50-fzf.zsh
 !50-lf.zsh
 !50-nnn.zsh
 !50-ranger.zsh
 !60-aliasrc.zsh
 !60-shortcuts.zsh
-!70-autosuggestions.zsh
+!70-plugins.zsh
+!71-autosuggestions.zsh
+!71-command-not-found.zsh
+!71-fzf.zsh
+!71-syntax-highlighting.zsh
+!72-plugins.zsh
 !90-keymap.zsh
