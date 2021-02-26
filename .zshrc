@@ -8,28 +8,43 @@
 #^----- INSTRUCTIONS -----------------------------------------------------------
 
 # To enable modules, create links from modules/ to init.d/ like this:
-#
 # $ cd ~/.config/zsh/init.d
 # $ ln -sf ../modules/options.zsh ./00-options.zsh
-#
-# Modules are loaded in alpha-numerical order, so it is recommended to make use
-# of a numbering scheme as in the above example to manage dependencies. While
-# efforts are made to provide modules that are as sequence-independent as
-# possible, conditions may arise in which one module is dependent on another and
-# should be given a number higher than the prerequisite module. Namely, it is
-# important to ensure that the keymaps module is loaded last, after the
-# functions referenced in the mappings have been defined:
-#
-# 71-history-substring-search.zsh
-# 90-keymap.zsh
 
 #$
 
-#^
+# set OS-dependent variables
+zshplugins="/usr/share/zsh/plugins"
+fzfplugins="/usr/share/fzf"
+
+if [ -f /etc/os-release ]; then
+    while IFS= read -r line; do
+        eval "$line"
+    done < /etc/os-release
+
+    case $NAME in
+        Debian*|Raspbian*) zshplugins="/usr/share"
+                           fzfplugins="/usr/share/doc/fzf/examples" ;;
+    esac
+else
+    case $(uname) in
+        OpenBSD) zshplugins="/usr/local/share"
+                 fzfplugins="/usr/local/share/fzf/zsh" ;;
+    esac
+fi
+
+# source plugins
 for file in $(find ${ZDOTDIR}/init.d/*)
 do
     source $file
 done
-#$
+
+# clean up
+if [ -f /etc/os-release ]; then
+    while IFS= read -r line; do
+        var=$(echo "$line" | cut -d '=' -f 1)
+        eval "unset $var"
+    done < /etc/os-release
+fi
 
 # vim: fdm=marker fmr=#^,#$

@@ -97,10 +97,24 @@ alias \
     pg='pgrep' \
     pk='pkill' \
     r='rangercd' \
-    tp='trash-put' \
-    update='yay -Syu && pacnotifyupdate.sh' \
-    upgrade='yay -Syu && pacnotifyupdate.sh' \
     z="zathura"
+
+#$
+
+#^ Package Management
+
+[ -n "$NAME" ] && case $NAME in
+    Arch*|Artix*)
+        alias \
+            install='sudo pacman -S' \
+            search='pacman -Ss' \
+            update='yay -Syu && pacnotifyupdate.sh' ;;
+    Debian*Raspbian*)
+        alias \
+            install='sudo apt install' \
+            search='apt search' \
+            update='sudo apt update && sudo apt upgrade' ;;
+esac
 
 #$
 
