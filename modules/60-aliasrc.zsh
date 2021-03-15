@@ -110,6 +110,7 @@ alias \
     pg='pgrep' \
     pk='pkill' \
     r='rangercd' \
+    vf='vifm' \
     z="zathura"
 
 #$
