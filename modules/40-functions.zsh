@@ -38,33 +38,36 @@ function _bookmarks { #^
         if [ "$_path" = "#" ] || [ -z "$_path" ]; then
             continue
         fi
-        printf "%b%s\t%s\n" "$_color2" "$_mark" "$_path"
 
+        printf "%b%s\t%s\n" "$_color2" "$_mark" "$_path"
         if [ -z "$_marks" ]; then
             _marks="$_mark"
         else
             _marks="${_marks}\n${_mark}"
         fi
-
     done < "$_conf"
 
     while true; do
         read -k 1 _letter
+        printf "%s" "$_letter"
 
         _letters="${_letters}${_letter}"
         _matches=$(printf "%b" "$_marks" | grep "^${_letters}.*" | wc -l)
 
         if [ "$_matches" -eq 1 ]; then
-            _path=$(grep ".* ${_letters}" "$_conf" | cut -d " " -f 1)
+            _path=$(grep ".* ${_letters}$" "$_conf" | cut -d " " -f 1)
             _path=$(eval "echo $_path")
-            if [ -d "$_path" ]; then
+
+            printf "\n\n"
+            if [ -d "$(readlink -f $_path)" ]; then
                 cd "$_path"
             else
                 $EDITOR "$_path"
             fi
             break
+
         elif [ "$_matches" -eq 0 ]; then
-            printf "Bookmark '%s' not found." "$_letters"
+            printf "\nBookmark '%s' not found." "$_letters"
             break
         fi
     done
