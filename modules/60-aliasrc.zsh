@@ -51,6 +51,19 @@ command -v neomutt >/dev/null \
 
 #$
 
+#^ Systemd
+
+alias \
+    ju='journalctl -u' \
+    jxe='journalctl -xe' \
+    sd='sudo systemctl disable' \
+    se='sudo systemctl enable' \
+    sr='sudo systemctl restart' \
+    ss='sudo systemctl start' \
+    sst='sudo systemctl stop'
+
+#$
+
 #^ Tmux
 
 alias \

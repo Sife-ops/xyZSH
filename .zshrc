@@ -7,8 +7,8 @@
 
 #^----- INSTRUCTIONS -----------------------------------------------------------
 
-# To enable modules, create links from modules/ to init.d/ like this:
-# $ cd ~/.config/zsh/init.d
+# To enable modules, create links from modules/ to conf.d/ like this:
+# $ cd ~/.config/zsh/conf.d
 # $ ln -sf ../modules/options.zsh ./00-options.zsh
 
 #$
@@ -34,7 +34,7 @@ else
 fi
 
 # source plugins
-for file in $(find ${ZDOTDIR}/init.d/*)
+for file in $(find ${ZDOTDIR}/conf.d/*)
 do
     source $file
 done
