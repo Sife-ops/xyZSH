@@ -28,7 +28,9 @@ function _bookmarks { #^
     local _conf="${ZDOTDIR}/bookmarks"
 
     local _color1="\033[1;33m"
-    local _color2="\033[0;36m"
+    local _color2="\033[1;34m"
+    local _color3="\033[1;32m"
+    local _color4="\033[1;37m"
 
     local _marks=""
     local _letters=""
@@ -39,7 +41,7 @@ function _bookmarks { #^
             continue
         fi
 
-        printf "%b%s\t%s\n" "$_color2" "$_mark" "$_path"
+        printf "%b%s\t%b%s\n" "$_color2" "$_mark" "$_color3" "$_path"
         if [ -z "$_marks" ]; then
             _marks="$_mark"
         else
@@ -47,6 +49,7 @@ function _bookmarks { #^
         fi
     done < "$_conf"
 
+    printf "%bMark: " "$_color4"
     while true; do
         read -k 1 _letter
         printf "%s" "$_letter"
